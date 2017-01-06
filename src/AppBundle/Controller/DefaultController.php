@@ -27,7 +27,7 @@ class DefaultController extends Controller
 
     /**
      * @Template
-     * @Route("/tag/{tag}/{page}", defaults={"page" = 1}, name="pictures_by_tag")
+     * @Route("/tag/{tag}/{page}", defaults={"page" = 1}, name="pictures_by_tag", requirements={"page" = "\d+"})
      */
     public function picturesByTagAction($tag, $page)
     {
@@ -54,7 +54,7 @@ class DefaultController extends Controller
             $list[$picIndex]['photo_url'] = 'https://farm'.$list[$picIndex]['farm_id'].'.staticflickr.com/'.$list[$picIndex]['server_id'].'/'.
                 $list[$picIndex]['photo_id'].'_'.$list[$picIndex]['secret_id'].'_'.$size.'.'.'jpg';
 
-            $list[$picIndex]['img'] = "<img title='".$list[$picIndex]['title']."' src='".$list[$picIndex]['photo_url']."' />";
+            $list[$picIndex]['img'] = "<img class='thumbnail img-responsive' title='".$list[$picIndex]['title']."' src='".$list[$picIndex]['photo_url']."' />";
 
         }
 
