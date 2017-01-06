@@ -1,26 +1,28 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <div class="col-xs-2">
-        {{ include('AppBundle:Default:check_user.html.twig') }}
+    <a href="#" class="menu" id="menu">MENU <span class="glyphicon glyphicon-align-justify"></span></a>
 
-        <h1>Categories</h1>
+    <div class="col-sm-2">
+            {{ include('AppBundle:Default:check_user.html.twig') }}
 
-        <div class="gallery">
-            {% if categories|length > 0 %}
+            <h1>Categories</h1>
 
-                <div class="cat_list">
-                {% for category in categories %}
-                    <p>
-                        <a class="glyphicon glyphicon-chevron-right" href="{{ url('pictures_by_tag', {tag : category.getName()}) }}">{{ category.getName() }}</a>
-                    </p>
-                {% endfor %}
-                </div>
+            <div class="gallery">
+                {% if categories|length > 0 %}
 
-            {% elseif is_granted('ROLE_USER') %}
-                <h5 class="alert alert-warning">You have not added any categories</h5>
-            {% endif %}
-        </div>
+                    <div class="cat_list">
+                    {% for category in categories %}
+                        <p>
+                            <a class="glyphicon glyphicon-chevron-right" href="{{ url('pictures_by_tag', {tag : category.getName()}) }}">{{ category.getName() }}</a>
+                        </p>
+                    {% endfor %}
+                    </div>
+
+                {% elseif is_granted('ROLE_USER') %}
+                    <h5 class="alert alert-warning">You have not added any categories</h5>
+                {% endif %}
+            </div>
     </div>
 
     <div class="col-xs-10">
