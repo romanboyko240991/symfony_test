@@ -2,16 +2,16 @@
 
 {% block pictures %}
 
-    <div class="col-md-8 full_pic">
+    <div class="col-xs-8 full_pic">
         <img src="{{ pic_url }}" />
     </div>
 
-    <div class="col-md-4">
-        <div class="col-md-8">
+    <div class="col-xs-4">
+        <div class="col-xs-8">
             <h3 class="pic_title">{{ pic_data.photo.title._content }}</h3>
             <p>{{ pic_data.photo.description._content|raw }}</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-4">
             <a class="glyphicon glyphicon-chevron-left back" href="{{ url('pictures_by_tag', {tag: app.request.get('tag')}) }}"></a>
         </div>
     </div>
