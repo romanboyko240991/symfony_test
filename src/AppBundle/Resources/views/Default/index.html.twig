@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <div class="col-md-2">
+    <div class="col-xs-2">
         {{ include('AppBundle:Default:check_user.html.twig') }}
 
         <h1>Categories</h1>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="col-md-10">
+    <div class="col-xs-10">
         {% block pictures %}{% endblock %}
     </div>
 {% endblock %}
