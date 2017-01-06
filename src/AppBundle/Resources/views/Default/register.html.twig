@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+            {{ form_start(form) }}
+
+            <p>
+                {{ form_label(form.username) }}<br>
+
+                {% if form_errors(form.username) %}
+                    {{ form_errors(form.username) }}
+                {% endif %}
+
+                {{ form_widget(form.username) }}
+            </p>
+
+            <p>
+                {{ form_label(form.password) }}<br>
+
+                {% if form_errors(form.password) %}
+                    {{ form_errors(form.password) }}
+                {% endif %}
+
+                {{ form_widget(form.password) }}
+            </p>
+
+            <p>
+                {{ form_label(form.email) }}<br>
+
+                {% if form_errors(form.email) %}
+                    {{ form_errors(form.email) }}
+                {% endif %}
+
+                {{ form_widget(form.email) }}
+            </p>
+            {{ form_end(form) }}
+
+            <p>
+                <a href="{{ url('login') }}">Login</a> |
+                <a href="{{ url('index_page') }}">Index page</a>
+            </p>
+    </div>
+    <div class="col-md-4"></div>
+{% endblock %}

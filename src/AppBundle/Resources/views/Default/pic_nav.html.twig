@@ -1,0 +1,7 @@
+<div class="pic_nav">
+    {% if app.request.get('page') != 1 %}
+        <a class="btn-info" href="{{ url('pictures_by_tag', {tag: app.request.get('tag'), page: app.request.get('page') - 1}) }}">Prev</a>
+    {% endif %}
+
+    <a class="btn-info" href="{{ url('pictures_by_tag', {tag: app.request.get('tag'), page: app.request.get('page') + 1}) }}">Next</a>
+</div>

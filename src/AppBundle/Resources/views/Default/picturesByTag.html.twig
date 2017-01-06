@@ -1,0 +1,16 @@
+{% extends 'AppBundle:Default:index.html.twig' %}
+
+
+    {% block pictures %}
+        {{ include('AppBundle:Default:pic_nav.html.twig') }}
+
+        <div class="pic_list">
+            {% for pic in pictures %}
+                <a href="{{ url('show_picture', {picture_id: pic.photo_id, tag: app.request.get('tag')}) }}">{{ pic.img|raw }}</a>
+            {% endfor %}
+        </div>
+
+        {{ include('AppBundle:Default:pic_nav.html.twig') }}
+    {% endblock %}
+
+    {% block title %}{{ app.request.get('tag')|capitalize }} Photo Gallery{% endblock %}

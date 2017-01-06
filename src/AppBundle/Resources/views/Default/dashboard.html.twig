@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {{ include('AppBundle:Default:check_user.html.twig') }}
+
+    <h1>Categories</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <button type="button" class="show_insert_cat btn-success">Insert new category</button>
+        </div>
+    </div>
+
+    <div class="new_cat_toggle">
+        Category name : <input type="text" class="new_cat_name">
+        <a href="{{ url('insertcat') }}" class="save_new_cat">Save</a>
+    </div>
+
+    <div class="cat_list">
+        {% if categories|length > 0 %}
+
+            {% for category in categories %}
+                <p class="cat">
+                    <span class="alert alert-success fade in">{{ category.getName() }}</span>
+
+                    <a href="{{ url('delcat') }}" class="del_cat" id="{{ category.getId() }}">Delete</a>
+                    <a class="upd_cat" href="#">Update</a>
+                    <a href="{{ url('updcat') }}" class="save_upd_cat" id="{{ category.getId() }}">Save</a>
+                </p>
+            {% endfor %}
+
+        {% endif %}
+    </div>
+{% endblock %}

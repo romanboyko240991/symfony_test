@@ -1,0 +1,56 @@
+.back {
+    font-size: 50px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.full_pic img {
+    width: 100%;
+}
+
+.pic_list img {
+    margin: 10px;
+}
+
+.pic_title {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.cat_list a, .cat span {
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.cat_list .cat {
+    margin-bottom: 40px;
+    display: inline;
+    margin-right: 20px;
+}
+
+.cat span {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+p.cat a {
+    font-size: 14px;
+}
+
+.show_insert_cat {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.new_cat_toggle {
+    margin-bottom: 50px;
+}
+
+.pic_nav {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
