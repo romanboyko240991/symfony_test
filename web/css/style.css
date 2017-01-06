@@ -6,7 +6,25 @@
     margin-top: 20px;
 }
 
+h1, .cat_list a, .cat span {
+    font-size: 14px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
 .full_pic img {
+    width: 100%;
+}
+
+.pic_list a {
+    display: inline-block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
     width: 100%;
 }
 
@@ -20,7 +38,6 @@
 }
 
 .cat_list a, .cat span {
-    font-size: 30px;
     text-transform: capitalize;
 }
 
