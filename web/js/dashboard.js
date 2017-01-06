@@ -1,4 +1,17 @@
-$(function () {
+
+(function ($) {
+    var menu_copy = $('.col-sm-2').html();
+    $('<div class="toggle_menu">' + menu_copy + '<div>').insertBefore('.col-xs-10').css('display', 'none');
+
+    $('#menu').click(function (event) {
+        $('.toggle_menu').toggle();
+        event.preventDefault();
+    });
+
+    $(window).resize(function () {
+        if($(window).width() > 768) $('.toggle_menu').css('display', 'none');
+    });
+
     $('.cat .save_upd_cat, .new_cat_toggle').hide();
 
     $('.show_insert_cat').click(function () {
@@ -116,4 +129,4 @@ $(function () {
 
         event.preventDefault();
     });
-});
+})(jQuery);
