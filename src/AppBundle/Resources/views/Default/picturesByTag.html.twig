@@ -4,13 +4,21 @@
     {% block pictures %}
         {{ include('AppBundle:Default:pic_nav.html.twig') }}
 
+        <div id="pic_list_align">
+            {% set count = 0 %}
         {% for pic in pictures %}
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            {% set count = count + 1 %}
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <a href="{{ url('show_picture', {picture_id: pic.photo_id, tag: app.request.get('tag')}) }}">
                     {{ pic.img|raw }}
                 </a>
             </div>
+
+            {% if count % 4 == 0 %}
+                <div class="clearfix"></div>
+            {% endif %}
         {% endfor %}
+        </div>
 
     {% endblock %}
 
